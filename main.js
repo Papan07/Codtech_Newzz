@@ -1,6 +1,6 @@
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-// We'll use GNews API as it's more reliable for client-side fetching compared to NewsAPI's free tier
-const BASE_URL = 'https://gnews.io/api/v4';
+// We'll use our new local/Vercel proxy to bypass CORS
+const BASE_URL = '/gnews-api';
 
 // DOM Elements
 const searchForm = document.getElementById('searchForm');
