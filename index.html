@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModernNews | Real-time Insights</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          Modern<span class="logo-accent">News</span>
+        </a>
+        <form class="search-form" id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search for topics, events..." autocomplete="off" required />
+          <button type="submit" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <section class="hero-section" id="heroSection">
+        <div id="heroSlider" class="hero-slider">
+          <div class="hero-content-loader">Loading Top Stories...</div>
+        </div>
+        <div class="slider-controls" id="sliderControls"></div>
+      </section>
+
+      <div class="content-header">
+        <h2 class="section-title" id="sectionTitle">Top Headlines</h2>
+      </div>
+
+      <!-- State Indicators -->
+      <div id="loadingIndicator" class="loading-state hidden">
+        <div class="spinner"></div>
+        <p>Fetching latest news...</p>
+      </div>
+
+      <div id="errorMessage" class="error-state hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="error-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <p id="errorText">Oops! Something went wrong.</p>
+        <button id="retryBtn" class="retry-btn">Try Again</button>
+      </div>
+
+      <div id="emptyState" class="empty-state hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <p>No articles found for your search.</p>
+      </div>
+
+      <!-- News Grid -->
+      <div class="news-grid" id="newsGrid">
+        <!-- Cards injected dynamically here -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 ModernNews. Built for demonstration.</p>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
